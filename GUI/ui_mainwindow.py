@@ -29,6 +29,7 @@ class Ui_MainWindow(object):
         self.radioButton_split = QRadioButton(self.groupBox)
         self.radioButton_split.setObjectName(u"radioButton")
         self.radioButton_split.setGeometry(QRect(10, 30, 91, 22))
+        self.radioButton_split.setChecked(True)
         self.radioButton_combine = QRadioButton(self.groupBox)
         self.radioButton_combine.setObjectName(u"radioButton_2")
         self.radioButton_combine.setGeometry(QRect(70, 30, 91, 22))
