@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QApplication, QMainWindow
 from GUI.ui_mainwindow import Ui_MainWindow
 from algorithm.automata import Automata
-
+import time
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -17,9 +17,270 @@ class MainWindow(QMainWindow):
 
     def convert(self):
         self.set_data()
-        self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed)
+        f = open("result.txt", "w")
+        try:
+            for i in range(20):
+                self.k = 6
+                self.n = 7
+                r = 200
+
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 3
+                self.n = 5
+                r = 200
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 2
+                self.n = 3
+                r = 200
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 6
+                self.n = 7
+                r = 100
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 3
+                self.n = 5
+                r = 100
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 2
+                self.n = 3
+                r = 100
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 6
+                self.n = 7
+                r = 10
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 3
+                self.n = 5
+                r = 10
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+            f.write("\n")
+            for i in range(20):
+                self.k = 2
+                self.n = 3
+                r = 10
+                self.automata = Automata(self.is_split, self.input, self.n, self.k, self.seed, r)
+
+                string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n{4}".format(self.automata.k,
+                                                                                          self.automata.n,
+                                                                                          self.automata.r,
+                                                                                          ', '.join(str(i) for i in
+                                                                                                    self.automata.rules_int),
+                                                                                          "\n".join(
+                                                                                              ": ".join(str(j) for j in
+                                                                                                        self.automata.automata[
+                                                                                                            i]) for i in
+                                                                                              range(
+                                                                                                  len(self.automata.automata) - 1,
+                                                                                                  len(self.automata.automata) - self.n - 1,
+                                                                                                  -1))
+                                                                                          )
+
+                start = time.time()
+                self.automata = Automata(False, string, self.n, self.k, self.seed, r)
+                end = time.time()
+                print(end - start)
+                f.write("{}\n".format(end - start))
+
+
+        except UnicodeDecodeError as err:
+            self.ui.plainTextEdit_result.clear()
+            self.ui.plainTextEdit_result.insertPlainText("Unicode Error.\nPossibly not enough automata states provided.")
+            raise err
+        except ValueError as err:
+            self.ui.plainTextEdit_result.clear()
+            self.ui.plainTextEdit_result.insertPlainText("Missing data.\nProvide values of m, n, k, r, rules, and k states of automata")
+            raise err
+        except IndexError as err:
+            self.ui.plainTextEdit_result.clear()
+            self.ui.plainTextEdit_result.insertPlainText("Index error.\npossibly not enough automata states provided.")
+            raise err
+
         if self.is_split:
             self.save_result_split()
+        else:
+            self.save_result_combine()
 
     # saves input from GUI
     def set_data(self):
@@ -29,6 +290,8 @@ class MainWindow(QMainWindow):
         self.n = self.ui.spinBox_n.value()
         if self.ui.radioButton_custom.isChecked():
             self.seed = self.ui.spinBox_custom_seed.value()
+        else:
+            self.seed = None
 
     # validates if k is smaller than n
     def spinBox_k_validate(self, value_k):
@@ -44,11 +307,30 @@ class MainWindow(QMainWindow):
 
     def save_result_split(self):
         self.ui.plainTextEdit_result.clear()
-        string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n".format(self.automata.k, self.automata.n, self.automata.r,
-                                                                          ', '.join(str(i) for i in self.automata.rules_int))
+        string = "k = {0:<5}\nn = {1:<5}\nr = {2:<5}\nrules = {3:10}\n".format(self.automata.k,
+                                                                                           self.automata.n,
+                                                                                           self.automata.r,
+                                                                                            ', '.join(str(i) for i in self.automata.rules_int),
+                                                                                           )
         self.ui.plainTextEdit_result.insertPlainText(string)
         string = "\n".join(": ".join(str(j) for j in self.automata.automata[i]) for i in range(len(self.automata.automata) - 1,
                                                                                len(self.automata.automata) - self.n - 1,
                                                                                -1))
         self.ui.plainTextEdit_result.insertPlainText(string)
 
+    def save_result_combine(self):
+        self.ui.plainTextEdit_result.clear()
+        self.ui.plainTextEdit_result.insertPlainText(self.automata.result)
+
+
+
+    def split_toggle_handler(self):
+        self.ui.spinBox_k.setEnabled(True)
+        self.ui.spinBox_n.setEnabled(True)
+        self.ui.groupBox_seed.setEnabled(True)
+
+
+    def combine_toggle_handler(self):
+        self.ui.spinBox_k.setEnabled(False)
+        self.ui.spinBox_n.setEnabled(False)
+        self.ui.groupBox_seed.setEnabled(False)
